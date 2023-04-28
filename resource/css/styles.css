@@ -1,3 +1,18 @@
+.chatbox{
+  min-height:80vh;
+  background-color: grey;
+  color: white;
+}
+
+.profpicu{
+        height: 50px;
+        width: 50px;
+}
+
+a.logout{
+    font-size: 60%;
+}
+
 .st{
     font-size: 16px;
 }
@@ -59,14 +74,16 @@
     margin-left: 15px;
 }
 .ceucolor{
-    color: blue;
+    color:#3640ff;
     margin-right: 3rem;
 }
 .ceucolor2{
     color:#DC65A1;
     font-weight: bold;
 }
+.bg2{
 
+}
 .btn.ceubtn,
 .btn.ceubtn:hover,
 .btn.ceubtn:active
@@ -354,3 +371,253 @@ header{
          visibility:hidden;
      }
 }
+
+svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+width: 100%;
+height: 100%;
+        box-sizing: border-box;
+        display: block;
+        background-color:rgba(12,12,142,1);
+background-image: linear-gradient(to bottom, rgba(14, 65, 102, 0.86), rgba(12,12,142,1));
+}
+.custom-btn {
+        width: 130px;
+        height: 40px;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px 25px;
+        font-family: 'Lato', sans-serif;
+        font-weight: 500;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+         box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+         7px 7px 20px 0px rgba(0,0,0,.1),
+         4px 4px 5px 0px rgba(0,0,0,.1);
+        outline: none;
+      }
+
+.btn-3 {
+        background: rgb(0,172,238);
+      background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+        width: 650px;
+        height: 40px;
+        line-height: 42px;
+        padding: 0;
+        border: none;
+        z-index: 9;
+
+      }
+      .btn-3 span {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .btn-3:before,
+      .btn-3:after {
+        position: absolute;
+        content: "";
+        right: 0;
+        top: 0;
+         background: rgba(2,126,251,1);
+        transition: all 0.3s ease;
+      }
+      .btn-3:before {
+        height: 0%;
+        width: 2px;
+      }
+      .btn-3:after {
+        width: 0%;
+        height: 2px;
+      }
+      .btn-3:hover{
+         background: transparent;
+        box-shadow: none;
+      }
+      .btn-3:hover:before {
+        height: 100%;
+      }
+      .btn-3:hover:after {
+        width: 100%;
+      }
+      .btn-3 span:hover{
+         color: rgb(168, 203, 237);
+      }
+      .btn-3 span:before,
+      .btn-3 span:after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+         background: rgba(2,126,251,1);
+        transition: all 0.3s ease;
+      }
+      .btn-3 span:before {
+        width: 2px;
+        height: 0%;
+      }
+      .btn-3 span:after {
+        width: 0%;
+        height: 2px;
+      }
+      .btn-3 span:hover:before {
+        height: 100%;
+      }
+      .btn-3 span:hover:after {
+        width: 100%;
+      }
+
+
+      .bg-lorenz{
+        background: rgb(255,255,255);
+        background: linear-gradient(17deg, rgba(255,255,255) 0%, rgba(12,12,142,1) 100%);
+      }
+
+      .home-col{
+        color: white;
+        margin-right: 3rem;
+      }
+
+      button {
+      display: flex;
+      margin: 0;
+      padding: 0.8em 1em;
+      outline: none;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border: none;
+      text-transform: uppercase;
+      background-color: #333;
+      border-radius: 10px;
+      color: #fff;
+      font-weight: 300;
+      font-size: 18px;
+      font-family: inherit;
+      z-index: 0;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+    }
+
+    button:hover {
+      animation: sh0 0.5s ease-in-out both;
+    }
+
+    @keyframes sh0 {
+      0% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+      }
+
+      25% {
+        transform: rotate(7deg) translate3d(0, 0, 0);
+      }
+
+      50% {
+        transform: rotate(-7deg) translate3d(0, 0, 0);
+      }
+
+      75% {
+        transform: rotate(1deg) translate3d(0, 0, 0);
+      }
+
+      100% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+      }
+    }
+
+    button:hover span {
+      animation: storm 0.7s ease-in-out both;
+      animation-delay: 0.06s;
+    }
+
+    button::before,
+    button::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 0;
+      transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+      z-index: -1;
+      transform: translate(100%, -25%) translate3d(0, 0, 0);
+    }
+
+    button:hover::before,
+    button:hover::after {
+      opacity: 0.15;
+      transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+    }
+
+    button:hover::before {
+      transform: translate3d(50%, 0, 0) scale(0.9);
+    }
+
+    button:hover::after {
+      transform: translate(50%, 0) scale(1.1);
+    }
+
+    .bg-set{
+      background: lightgrey;
+    }
+.card {
+  width: 100%;
+  height: 100px;
+  background: rgb(0, 0, 0);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.card:hover {
+  width: 100%;
+  height: 100px;
+  background: rgb(255, 255, 255);
+  border: 2px solid rgb(200, 200, 200);
+  border-radius: 10px;
+  background-color: #dfdfdf;
+  transition: all .5s;
+  color: black;
+}
+.coldesc {
+  font-size: .8rem;
+  padding: 10px;
+}
+.secondAnimation {
+  --hoverContorno: #959595;
+}
+
+.secondAnimation:hover,
+.secondAnimation:focus {
+  -webkit-animation: cardAnimacion 1.4s;
+  animation: cardAnimacion 1.4s;
+  box-shadow: 0 0 0 0.8em rgba(255, 255, 255, 0);
+  border-radius: 20px;
+}
+
+@-webkit-keyframes cardAnimacion {
+  0% {
+    box-shadow: 0 0 0 0 var(--hoverContorno);
+  }
+}
+
+@keyframes cardAnimacion {
+  0% {
+    box-shadow: 0 0 0 0 var(--hoverContorno);
+  }
+}
+

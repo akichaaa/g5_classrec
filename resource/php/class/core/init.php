@@ -6,7 +6,7 @@ $GLOBALS['config'] = array(
         'host' => '127.0.0.1:3307',
         'username' =>'root',
         'password' =>'',
-        'db'=>'classrec'
+        'db'=>'g5_classrec'
     ),
     'remember'=>array(
         'cookie_name' => 'hash',

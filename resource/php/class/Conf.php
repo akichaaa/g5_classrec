@@ -1,5 +1,5 @@
 <?php
-class Conf{
+class Conf {
     public static function get($path=null){
         if($path){
             $config = $GLOBALS['config'];

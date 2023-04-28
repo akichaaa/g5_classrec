@@ -1,4 +1,9 @@
 <?php
+
+function showCollege() {
+    $viewcollege = new viewcollege();
+    $viewcollege->showusercollege();
+}
 function CheckSuccess($status){
     if($status =='Success'){
         echo '<div class="alert alert-success alert-dismissible fade show col-12" role="alert">
@@ -137,10 +142,10 @@ function vald(){
                         $login = $user->login(Input::get('username'),Input::get('password'),$remember);
                         if($login){
                             if($user->data()->groups == 1){
-                                 Redirect::to('template.php');
+                                 Redirect::to('index.php');
                                 echo $user->data()->groups;
                             }else{
-                                 Redirect::to('template.php');
+                                 Redirect::to('index.php');
                                 echo $user->data()->groups;
                             }
                         }else{
@@ -165,9 +170,18 @@ function vald(){
 function profilePic(){
     $view = new view();
     if($view->getdpSRA()!=="" || $view->getdpSRA()!==NULL){
-        echo "<img class='rounded-circle profpic img-thumbnail ml-3' alt='100x100' src='data:".$view->getMmSRA().";base64,".base64_encode($view->getdpSRA())."'/>";
+        echo "<img class='rounded-circle mr-3 profpic ml-3' alt='100x100' src='resource/img/user.jpg'".$view->getMmSRA().";base64,".base64_encode($view->getdpSRA())."'/>";
     }else{
-        echo "<img class='rounded-circle profpic img-thumbnail' alt='100x100' src='resource/img/user.jpg'/>";
+        echo "<img class='rounded-circle profpic' alt='100x100' src='data:' />";
+    }
+}
+
+function profilePicu(){
+    $view = new view();
+    if($view->getdpSRA()!=="" || $view->getdpSRA()!==NULL){
+        echo "<img class='rounded-circle mr-3 profpicu ml-3' alt='100x100' src='resource/img/user.jpg'".$view->getMmSRA().";base64,".base64_encode($view->getdpSRA())."'/>";
+    }else{
+        echo "<img class='rounded-circle profpicu' alt='100x100' src='data:' />";
     }
 }
 
@@ -214,7 +228,7 @@ function updateProfile(){
                 } catch (Exception $e) {
                     die($e->getMessage());
                 }
-                Redirect::to('template.php');
+                Redirect::to('index.php');
             }else{
                 foreach ($validate->errors()as $error) {
                 pError($error);
@@ -255,7 +269,7 @@ function changeP(){
                     } catch (Exception $e) {
                         die($e->getMessage());
                     }
-                    Redirect::to('template.php');
+                    Redirect::to('index.php');
                 }
             }else{
                 foreach ($validate->errors()as $error) {
