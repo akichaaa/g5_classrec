@@ -59,16 +59,14 @@
     margin-left: 15px;
 }
 .ceucolor{
-    color:#DC65A1;
+    color: blue;
     margin-right: 3rem;
 }
 .ceucolor2{
     color:#DC65A1;
     font-weight: bold;
 }
-.bg2{
 
-}
 .btn.ceubtn,
 .btn.ceubtn:hover,
 .btn.ceubtn:active
