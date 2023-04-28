@@ -74,9 +74,12 @@ function vald(){
                 'max'=>50,
             ),
             'email'=>array(
-                'required'=>'true'
+                'required'=>'true',
             ),
             'College'=>array(
+                'required'=>'true',
+            ),
+            'Role'=>array(
                 'required'=>'true'
             )));
 
@@ -198,6 +201,9 @@ function updateProfile(){
                 'max'=>50,
             ),
             'College'=>array(
+                'required'=>'true',
+            ),
+            'role'=>array(
                 'required'=>'true'
             )));
 
