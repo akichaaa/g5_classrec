@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/classrec/resource/php/class/core/init.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/g5_classrec/resource/php/class/core/init.php';
 require_once 'config.php';
 
 class view extends config{
@@ -13,6 +13,18 @@ class view extends config{
             $rows =$data-> fetchAll(PDO::FETCH_OBJ);
                 foreach ($rows as $row) {
                   echo '<option data-tokens=".'.$row->college_school.'." value="'.$row->college_school.'">'.$row->college_school.'</option>';
+                  echo 'success';
+                }
+        }
+        public function roleSP2(){
+            $config = new config;
+            $con = $config->con();
+            $sql = "SELECT * FROM `role`";
+            $data = $con-> prepare($sql);
+            $data ->execute();
+            $rows =$data-> fetchAll(PDO::FETCH_OBJ);
+                foreach ($rows as $row) {
+                  echo '<option data-tokens=".'.$row->role.'." value="'.$row->role.'">'.$row->role.'</option>';
                   echo 'success';
                 }
         }
