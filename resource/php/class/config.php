@@ -7,7 +7,7 @@ class config{
 
     public function con(){
         try {
-            $this->pdo = new PDO('mysql:local=127.0.0.1:3307;dbname=instasoc', $this->user, $this->password);
+            $this->pdo = new PDO('mysql:local=127.0.0.1:3307;dbname=classrec', $this->user, $this->password);
             } catch (PDOException $e) {
                 die($e->getMessage());
         }

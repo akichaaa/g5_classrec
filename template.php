@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/instasoc/resource/php/class/core/init.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/classrec/resource/php/class/core/init.php';
 isLogin();
 $viewtable = new viewtable();
  ?>
@@ -8,7 +8,7 @@ $viewtable = new viewtable();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CEU instasoc Portal</title>
+  <title>CEU classrec Portal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">

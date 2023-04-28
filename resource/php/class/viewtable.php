@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/instasoc/resource/php/class/core/init.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/classrec/resource/php/class/core/init.php';
 require_once 'config.php';
 
 class viewtable extends config{
