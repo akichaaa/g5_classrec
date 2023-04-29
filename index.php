@@ -41,6 +41,7 @@ $nameUser = $user->data()->name;
             <?php profilePic(); ?>
             <img src="resource/img/isak.jpg" alt=""class="img-fluid rounded-circle headerPic">
              <?php echo "<h1 class='name text-center mt-4'>$nameUser</h1>"; ?>
+             <p class='name text-center'><?php showRole() ?></p>
              <p class='name text-center'><?php showCollege() ?></p>
              <div class="row justify-content-center">
                <a href="changepassword.php" style="color: #fff;
