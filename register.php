@@ -32,7 +32,9 @@ $view = new view;
             ?>
             <div class="register">
               <form class="form"  method="post">
-                <div class="title text-center col-12">Welcome,<br><span>sign up to continue</span></div>
+
+                <div class="title text-center col-12">Welcome,<br><span>New User? Sign up to continue!</span>
+                <br><span>Already have Accounts?<a href="login.php"> Login!</a></span></div>
                 <table class="table ">
                     <tr>
                         <!-- <td> -->
@@ -59,7 +61,7 @@ $view = new view;
                                     <input type="hidden"class="input" name ="Token" value="<?php echo Token::generate();?>" />
                                   </div>
                                   <div class="form-group col-4">
-                                      <select id="role" class="input" name="Role[]" class="selectpicker" data-live-search="true"   /required>
+                                      <select id="role" class="input" name="role[]" class="selectpicker" data-live-search="true"   /required>
                                         <option selected>Role</option> <?php $view->roleSP2();?>
                                     </select>
                                   </div>

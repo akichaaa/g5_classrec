@@ -52,6 +52,11 @@ function vald(){
          }else{
             $_POST['College'] ="";
          }
+         if(!empty($_POST['role'])){
+             $_POST['role'] = implode(',',input::get('role'));
+         }else{
+            $_POST['role'] ="";
+         }
         $validate = new Validate;
         $validate = $validate->check($_POST,array(
             'username'=>array(
