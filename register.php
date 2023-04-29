@@ -46,25 +46,30 @@ $view = new view;
                                 <div class="form-group col-md-4">
                                     <input type="password" class="input" name="ConfirmPassword" id="ConfirmPassword" value ="<?php echo input::get('ConfirmPassword');?>"placeholder="Confirm Password" autocomplete="off"required/>
                                 </div>
+                                <div class="form-group col-md-4">
+                                  <input class="input"  type = "text" name="fullName" id="fullName" placeholder="FullName" value ="<?php echo input::get('fullName');?>"/required>
+                                </div>
                                   <div class= " form-group col-md-4">
                                     <select id="College" class="input" name="College[]" class="selectpicker  " data-live-search="true"  required>
                                       <option selected>College/Department</option> <?php $view->collegeSP2();?>
                                     </select>
                                   </div>
                                   <div class=" form-group col-md-4">
-                                    <input class="form-contro input" placeholder="Email Address" type = "text" name="email" id="email" value ="<?php echo input::get('email');?>"/required>
+                                    <input class="input" placeholder="Email Address" type = "text" name="email" id="email" value ="<?php echo input::get('email');?>"/required>
                                     <input type="hidden"class="input" name ="Token" value="<?php echo Token::generate();?>" />
                                   </div>
-                                  <div class="form-group col-md-4">
+                                  <div class="form-group col-4">
                                       <select id="role" class="input" name="Role[]" class="selectpicker" data-live-search="true"   /required>
                                         <option selected>Role</option> <?php $view->roleSP2();?>
                                     </select>
                                   </div>
-                                  <div class="form-group col-md-4" >
-                                    <label  >&nbsp;</label>
-                                    <input type="hidden" name ="Token" value="<?php echo Token::generate();?>" />
-                                    <input class="button-confirm input" type="submit" value="Register" />
-                                  </div>
+                                  <div class="row justify-content-center ">
+                                    <div class="form-group col-md-4" >
+                                      <label  >&nbsp;</label>
+                                      <input type="hidden" name ="Token" value="<?php echo Token::generate();?>" />
+                                      <input class="button-confirm input" type="submit" value="Register" />
+                                    </div>
+                              </div>
                               </div>
                             </td>
                           </tr>

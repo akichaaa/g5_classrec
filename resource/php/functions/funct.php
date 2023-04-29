@@ -79,7 +79,7 @@ function vald(){
             'College'=>array(
                 'required'=>'true',
             ),
-            'Role'=>array(
+            'role'=>array(
                 'required'=>'true'
             )));
 
@@ -96,6 +96,7 @@ function vald(){
                         'groups'=>1,
                         'colleges'=> input::get('College'),
                         'email'=> input::get('email'),
+                        'role'=> input::get('role'),
                     ));
 
                     $user->createC(array(
@@ -203,7 +204,7 @@ function updateProfile(){
             'College'=>array(
                 'required'=>'true',
             ),
-            'role'=>array(
+            'Role'=>array(
                 'required'=>'true'
             )));
 
