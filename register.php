@@ -60,18 +60,17 @@ $view = new view;
                                     <input class="input" placeholder="Email Address" type = "text" name="email" id="email" value ="<?php echo input::get('email');?>"/required>
                                     <input type="hidden"class="input" name ="Token" value="<?php echo Token::generate();?>" />
                                   </div>
-                                  <div class="form-group col-4">
+                                  <div class="form-group col-md-4 justify-content-center">
                                       <select id="role" class="input" name="role[]" class="selectpicker" data-live-search="true"   /required>
                                         <option selected>Role</option> <?php $view->roleSP2();?>
                                     </select>
                                   </div>
-                                  <div class="row justify-content-center ">
-                                    <div class="form-group col-md-4" >
-                                      <label  >&nbsp;</label>
-                                      <input type="hidden" name ="Token" value="<?php echo Token::generate();?>" />
-                                      <input class="button-confirm input" type="submit" value="Register" />
-                                    </div>
                               </div>
+                              <div class="row justify-content-center ">
+                                <div class="form-group col-md-4" >
+                                  <input type="hidden" name ="Token" value="<?php echo Token::generate();?>" />
+                                  <input class="button-confirm input" type="submit" value="Register" />
+                                </div>
                               </div>
                             </td>
                           </tr>
