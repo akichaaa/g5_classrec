@@ -58,6 +58,89 @@ function pError($error){
          if(Token::check(Input::get('Token'))){
             if(!empty($_POST['College'])){
                 $_POST['College'] = implode(',',input::get('College'));
+function vald(){
+     if(input::exists()){
+      if(Token::check(Input::get('Token'))){
+         if(!empty($_POST['College'])){
+             $_POST['College'] = implode(',',input::get('College'));
+         }else{
+            $_POST['College'] ="";
+         }
+         if(!empty($_POST['role'])){
+             $_POST['role'] = implode(',',input::get('role'));
+         }else{
+            $_POST['role'] ="";
+         }
+        $validate = new Validate;
+        $validate = $validate->check($_POST,array(
+            'username'=>array(
+                'required'=>'true',
+                'min'=>4,
+                'max'=>20,
+                'unique'=>'tbl_accounts'
+            ),
+            'password'=>array(
+                'required'=>'true',
+                'min'=>6,
+            ),
+            'ConfirmPassword'=>array(
+                'required'=>'true',
+                'matches'=>'password'
+            ),
+            'fullName'=>array(
+                'required'=>'true',
+                'min'=>2,
+                'max'=>50,
+            ),
+            'email'=>array(
+                'required'=>'true',
+            ),
+            'College'=>array(
+                'required'=>'true',
+            ),
+            'role'=>array(
+                'required'=>'true'
+            )));
+
+            if($validate->passed()){
+                $user = new user();
+                $salt = Hash::salt(32);
+                try {
+                    $user->create(array(
+                        'username'=>input::get('username'),
+                        'password'=>Hash::make(input::get('password'),$salt),
+                        'salt'=>$salt,
+                        'name'=> input::get('fullName'),
+                        'joined'=>date('Y-m-d H:i:s'),
+                        'groups'=>1,
+                        'colleges'=> input::get('College'),
+                        'email'=> input::get('email'),
+                        'role'=> input::get('role'),
+                    ));
+
+                    $user->createC(array(
+                        'checker'=> input::get('fullName'),
+
+                    ));
+                    $user->createV(array(
+                        'verifier'=> input::get('fullName'),
+                    ));
+
+                    $user->createR(array(
+                        'releasedby'=> input::get('fullName'),
+
+                    ));
+                } catch (Exception $e) {
+                    die($e->getMessage());
+                }
+
+                Success();
+            }else{
+                foreach ($validate->errors()as $error) {
+                pError($error);
+                }
+            }
+        }
             }else{
                $_POST['College'] ="";
             }
@@ -220,6 +303,9 @@ function updateProfile(){
                 'max'=>50,
             ),
             'College'=>array(
+                'required'=>'true',
+            ),
+            'Role'=>array(
                 'required'=>'true'
             )));
 
