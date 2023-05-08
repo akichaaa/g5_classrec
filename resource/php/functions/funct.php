@@ -52,6 +52,11 @@ function vald(){
          }else{
             $_POST['College'] ="";
          }
+         if(!empty($_POST['role'])){
+             $_POST['role'] = implode(',',input::get('role'));
+         }else{
+            $_POST['role'] ="";
+         }
         $validate = new Validate;
         $validate = $validate->check($_POST,array(
             'username'=>array(
@@ -74,9 +79,12 @@ function vald(){
                 'max'=>50,
             ),
             'email'=>array(
-                'required'=>'true'
+                'required'=>'true',
             ),
             'College'=>array(
+                'required'=>'true',
+            ),
+            'role'=>array(
                 'required'=>'true'
             )));
 
@@ -93,6 +101,7 @@ function vald(){
                         'groups'=>1,
                         'colleges'=> input::get('College'),
                         'email'=> input::get('email'),
+                        'role'=> input::get('role'),
                     ));
 
                     $user->createC(array(
@@ -198,6 +207,9 @@ function updateProfile(){
                 'max'=>50,
             ),
             'College'=>array(
+                'required'=>'true',
+            ),
+            'Role'=>array(
                 'required'=>'true'
             )));
 
