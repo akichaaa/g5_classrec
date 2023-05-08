@@ -58,6 +58,8 @@ function pError($error){
          if(Token::check(Input::get('Token'))){
             if(!empty($_POST['College'])){
                 $_POST['College'] = implode(',',input::get('College'));
+}
+}
 function vald(){
      if(input::exists()){
       if(Token::check(Input::get('Token'))){
@@ -174,7 +176,7 @@ function vald(){
                'Role'=>array(
                    'required'=>'true'
                )));
-   
+
                if($validate->passed()){
                    $user = new user();
                    $salt = Hash::salt(32);
@@ -190,23 +192,23 @@ function vald(){
                            'role'=> input::get('Role'),
                            'email'=> input::get('email'),
                        ));
-   
+
                        $user->createC(array(
                            'checker'=> input::get('fullName'),
-   
+
                        ));
                        $user->createV(array(
                            'verifier'=> input::get('fullName'),
                        ));
-   
+
                        $user->createR(array(
                            'releasedby'=> input::get('fullName'),
-   
+
                        ));
                    } catch (Exception $e) {
                        die($e->getMessage());
                    }
-   
+
                    Success();
                }else{
                    foreach ($validate->errors()as $error) {
