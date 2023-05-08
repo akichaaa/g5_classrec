@@ -18,7 +18,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/g5_classrec/resource/php/class/core/ini
       <div class="row justify-content-center">
         <div class="col-5">
           <form class="form text-center" action="" method="post">
-            <div class="title">Welcome,<br><span>log in to continue</span></div>
+            <div class="title">Welcome mhiee,<br><span>log in ka na dyarn to continue</span></div>
             <?php logd();?>
             <input type="text" id="username" placeholder="Username" name="username" class="input" required>
             <input type="password" id="defaultLoginFormPassword" placeholder="Password" name="password" class="input" required>
