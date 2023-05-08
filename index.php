@@ -1,14 +1,20 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/classrec/resource/php/class/core/init.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/g5_classrec/resource/php/class/core/init.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/g5_classrec/resource/php/class/viewcollege.php';
+
 isLogin();
+$view = new view;
+$user = new user();
 $viewtable = new viewtable();
+$user = new User();
+$nameUser = $user->data()->name;
  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Class Record System</title>
+  <title>CLASS RECORD</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -28,21 +34,33 @@ $viewtable = new viewtable();
   <script type="text/javascript" charset="utf8" src="vendor/js/dataTables/buttons.print.min.js"></script>
 
 </head>
-<body>
-
-        <nav class="navbar navbar-dark bg-white shadow-sm slide-in-left">
-          <a class="navbar-brand" href="https://malolos.ceu.edu.ph/">
-            <img src="resource/img/logo.jpg" height="70" class="d-inline-block align-top"
-              alt="mdb logo"><h3 class="ib">
-          </a>
-             <a href="pending.php"><i class="fas fa-home ceucolor"></i></a>
-             <a href="https:/www.facebook.com/theCEUofficial/"><i class="fab fa-facebook-f ceucolor"></i></a>
-             <a href="https://www.instagram.com/ceuofficial/"><i class="fab fa-instagram ceucolor"></i></a>
-             <a href="https://twitter.com/ceumalolos"><i class="fab fa-twitter ceucolor"></i></a>
-        </nav>
-
-        <div class="container mt-4 puff-in-center">
-          <?php $viewtable->viewApproveTable(); ?>
+<body class="bg-set">
+        <div class="container-fluid mt-4 puff-in-center text-dark pt-5">
+          <div class="row">
+            <div class="col-md-6 bg-none text-center prof-set">
+            <?php profilePic(); ?>
+            <img src="resource/img/isak.jpg" alt=""class="img-fluid rounded-circle headerPic">
+             <?php echo "<h1 class='name text-center mt-4'>$nameUser</h1>"; ?>
+             <p class='name text-center'><?php showRole() ?></p>
+             <p class='name text-center'><?php showCollege() ?></p>
+             <div class="row justify-content-center">
+               <a href="changepassword.php" style="color: #fff;
+               text-decoration: none;"><button>
+                 <span>CHANGE PASSWORD</span>
+               </button></a>
+               <a href="updateprofile.php" style="color: #fff;
+               text-decoration: none;
+               margin-left: 10px;"><button><span>UPDATE PROFILE</span></button></a>
+             </div>
+             </div>
+            <div class="col-md-6">
+              <?php
+              echo "<br>";
+              $view = new view();
+              $view->getnames();
+              ?>
+            </div>
+          </div>
         </div>
 </body>
 

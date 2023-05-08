@@ -5,7 +5,7 @@ $view = new view;
 
 
 
- <!DOCTYPE html>
+<!DOCTYPE html>
  <html lang="en">
  <head>
    <meta charset="UTF-8">
@@ -32,6 +32,7 @@ $view = new view;
             ?>
             <div class="register">
               <form class="form"  method="post">
+                <div class="title text-center col-12">Welcome,<br><span>sign up to continue</span></div>
 
                 <div class="title text-center col-12">Welcome,<br><span>New User? Sign up to continue!</span>
                 <br><span>Already have Accounts?<a href="login.php"> Login!</a></span></div>
@@ -41,6 +42,15 @@ $view = new view;
                             <div class="row justify-content-center m-3">
                                 <div class="col-md-4">
                                   <input type="text" placeholder="Username" name="username" class=" form-group input">
+                                </div>
+                                <div class="col-md-4">
+                                  <input type="text" placeholder="Full Name" name="fullName" class=" form-group input">
+                                </div>
+                                  <div class="form-group col-md-4">
+                                  <input type="password" placeholder="Password" name="password" class="input">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="password" class="input" name="ConfirmPassword" id="ConfirmPassword" value ="<?php echo input::get('ConfirmPassword');?>"placeholder="Confirm Password" autocomplete="off"required/>
                                 </div>
                                   <div class="form-group col-md-4">
                                   <input type="password" placeholder="Password" name="password" class="input">
@@ -57,6 +67,19 @@ $view = new view;
                                     </select>
                                   </div>
                                   <div class=" form-group col-md-4">
+                                    <input class="form-contro input" placeholder="Email Address" type = "text" name="email" id="email" value ="<?php echo input::get('email');?>"/required>
+                                    <input type="hidden"class="input" name ="Token" value="<?php echo Token::generate();?>" />
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                      <select id="role" class="input" name="Role[]" class="selectpicker" data-live-search="true"   /required>
+                                        <option selected>Role</option> <?php $view->roleSP2();?>
+                                    </select>
+                                  </div>
+                                  <div class="form-group col-md-4" >
+                                    <label  >&nbsp;</label>
+                                    <input type="hidden" name ="Token" value="<?php echo Token::generate();?>" />
+                                    <input class="button-confirm input" type="submit" value="Register" />
+                                  </div>
                                     <input class="input" placeholder="Email Address" type = "text" name="email" id="email" value ="<?php echo input::get('email');?>"/required>
                                     <input type="hidden"class="input" name ="Token" value="<?php echo Token::generate();?>" />
                                   </div>

@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/classrec/resource/php/class/core/init.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/g5_classrec/resource/php/class/core/init.php';
 require_once 'resource/php/class/config.php';
 $user = new user();
 
@@ -17,8 +17,8 @@ if(isset($_POST['pic'])){
         die($e->getMessage());
     }
 
-    Redirect::to('template.php');
+    Redirect::to('index.php');
 }else{
-    Redirect::to('template.php');
+    Redirect::to('index.php');
 }
  ?>

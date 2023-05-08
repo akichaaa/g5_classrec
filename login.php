@@ -1,5 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'].'/g5_classrec/resource/php/class/core/init.php';
+$view = new view;
  ?>
 
 <!DOCTYPE html>
@@ -22,10 +23,6 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/g5_classrec/resource/php/class/core/ini
             <?php logd();?>
             <input type="text" id="username" placeholder="Username" name="username" class="input" required>
             <input type="password" id="defaultLoginFormPassword" placeholder="Password" name="password" class="input" required>
-            <select class="input" name="role">
-              <option value="Student">Student</option>
-              <option value="Teacher">Teacher</option>
-            </select>
             <div class="login-with">
               <div class="button-log"></div>
               <div class="button-log">
